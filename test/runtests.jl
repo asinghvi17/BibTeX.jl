@@ -12,7 +12,7 @@ end
 
 @testset "Minimal functionality test" begin
     
-    preamble, result = parse_bibtex(""\"
+    preamble, result = parse_bibtex("""
             @preamble{some instructions}
             @comment blah blah
             @string{short = long}
@@ -21,7 +21,7 @@ end
               d = "d d",
               e = f # short
             }
-            ""\");
+            """);
     
     @test preamble == ""
     
