@@ -23,7 +23,7 @@ end
             }
             """);
     
-    @test preamble == ""
+    @test preamble == "some instructions"
     
     @test result["b"]["type"] == "a"
     
