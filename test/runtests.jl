@@ -12,7 +12,7 @@ end
 
 @testset "Parsing a file" begin
     # just test if it parses (for now)
-    @test_nowarn preamble, result = joinpath((@__FILE__) |> dirname |> dirname, "example", "examples.bib") |> f -> read(f, string) |> parse_bibtex
+    @test_nowarn preamble, result = joinpath((@__FILE__) |> dirname |> dirname, "example", "examples.bib") |> f -> read(f, String) |> parse_bibtex
     
     @test preamble == "some instructions"
     
