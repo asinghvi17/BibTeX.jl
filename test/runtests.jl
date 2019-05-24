@@ -10,11 +10,20 @@ using BibTeX
     
 end
 
-@testset "Parsing a file" begin
+@testset "Minimal functionality test" begin
     
-    preamble, result = joinpath((@__FILE__) |> dirname |> dirname, "example", "examples.bib") |> f -> read(f, String) |> parse_bibtex
+    preamble, result = parse_bibtex(""\"
+            @preamble{some instructions}
+            @comment blah blah
+            @string{short = long}
+            @a{b,
+              c = { {c} c},
+              d = "d d",
+              e = f # short
+            }
+            ""\");
     
-    @test preamble == "some instructions"
+    @test preamble == ""
     
     @test result["b"]["type"] == "a"
     
