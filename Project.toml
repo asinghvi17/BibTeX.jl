@@ -1,6 +1,5 @@
 name = "BibTeX"
 uuid = "7f761e16-7db8-11e9-084c-9f1a615acd73"
-authors = [Brandon Taylor]
 version = "0.0.1"
 
 [compat]
